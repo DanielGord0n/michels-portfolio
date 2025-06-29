@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaExternalLinkAlt, FaGithub, FaEye, FaTimes } from 'react-icons/fa';
+import { FaTiktok } from 'react-icons/fa';
 import './Portfolio.css';
 
 const Portfolio = () => {
@@ -15,9 +16,8 @@ const Portfolio = () => {
       description: "As a co-owner of Viva RGC and a former long-listed Olympic rhythmic gymnast, I created this flyer to promote our programs and highlight the centre's commitment to excellence, community, and youth development.",
       fullDescription: "Designed to attract new families, the flyer blends professional branding with an inviting, energetic tone. Beyond design, my role gave me valuable experience in marketing, communication, and program coordination. I developed strong skills in speaking with both parents and young athletes — explaining training programs clearly, building trust, and fostering a positive environment.",
       skills: ["Graphic Design", "Marketing", "Brand Strategy", "Community Engagement"],
-      icon: "/images/viva-rgc-icon.png", // Add icon for project
-      image: "/images/viva-rgc-flyer.jpg",
-      previewImage: "/images/viva-rgc-flyer.png", // Full size for preview
+      icon: "/images/viva-rgc-icon.png",
+      previewImage: "/images/viva-rgc-flyer.png",
       link: "https://www.vivargc.com/#!/",
       hasLink: true
     },
@@ -29,9 +29,8 @@ const Portfolio = () => {
       fullDescription: "I proposed strategies like AI-driven customization, credit-based rewards, and feedback incentives to boost engagement and long-term loyalty. This project highlights my ability to combine consumer insight, CX strategy, and clear communication to solve real-world brand challenges.",
       skills: ["CX Strategy", "Consumer Research", "AI Implementation", "Strategic Writing"],
       icon: "/images/skincare-icon.png",
-      image: "/images/skincare-strategy.jpg",
       previewImage: "/images/skincare-strategy-preview.jpg",
-      link: "#", // Replace with actual blog link
+      link: "#",
       hasLink: false
     },
     {
@@ -42,9 +41,9 @@ const Portfolio = () => {
       fullDescription: "Alongside content creation, I used SQL to analyze player behavior and engagement trends, supporting data-driven decisions across marketing campaigns. This role strengthened my skills in digital marketing, community management, performance analytics, and platform-specific growth, allowing me to merge creativity with data to deliver measurable impact.",
       skills: ["TikTok Marketing", "SQL", "Data Analysis", "Community Management"],
       icon: "/images/novaly-icon.png",
-      image: "/images/novaly-tiktok.jpg",
-      previewImage: "/images/novaly-tiktok-preview.jpg",
+      previewImage: "/images/novaly-tiktok-preview.png",
       link: "https://novalystudios.com/",
+      tiktokLink: "https://www.tiktok.com/@dragonsoulrblx",
       hasLink: true,
       results: "17,000+ followers grown"
     },
@@ -56,9 +55,8 @@ const Portfolio = () => {
       fullDescription: "As part of the process, I conducted in-person stakeholder interviews, audience research, and competitor analysis. My final plan included influencer marketing, event-based promotions, and cross-platform content tailored for Instagram, TikTok, and Pinterest. This project strengthened my skills in campaign planning, brand positioning, performance analytics, and client communication.",
       skills: ["Social Media Strategy", "Market Research", "Influencer Marketing", "Brand Positioning"],
       icon: "/images/grays-icon.png",
-      image: "/images/grays-strategy.jpg",
       previewImage: "/images/grays-strategy-preview.jpg",
-      link: "https://graystoronto.com", // Replace with actual website
+      link: "https://graystoronto.com",
       hasLink: true
     },
     {
@@ -69,9 +67,8 @@ const Portfolio = () => {
       fullDescription: "This innovative approach explores how virtual reality can create deeper connections between brands and consumers, offering an immersive experience that goes beyond traditional advertising methods.",
       skills: ["VR Design", "Experiential Marketing", "Innovation", "Brand Storytelling"],
       icon: "/images/vr-icon.png",
-      image: "/images/vr-concept.jpg",
       previewImage: "/images/vr-concept-preview.jpg",
-      link: "#", // No external link for concept
+      link: "#",
       hasLink: false
     },
     {
@@ -82,9 +79,8 @@ const Portfolio = () => {
       fullDescription: "I compiled detailed store profiles including contact information, social insights, and product compatibility. My final business development report included strategic outreach recommendations to support retail partnerships and expansion. This role strengthened my skills in market analysis, B2B outreach, brand alignment, and strategic reporting.",
       skills: ["Market Research", "Data Analysis", "B2B Strategy", "Strategic Reporting"],
       icon: "/images/kindpet-icon.png",
-      image: "/images/kindpet-research.jpg",
       previewImage: "/images/kindpet-research-preview.jpg",
-      link: "https://thekindpet.com", // Replace with actual website
+      link: "https://thekindpet.com",
       hasLink: true,
       results: "40+ boutiques identified"
     }
@@ -208,6 +204,15 @@ const Portfolio = () => {
                       <FaExternalLinkAlt /> Visit Website
                     </button>
                   )}
+                  {selectedProject.tiktokLink && (
+                    <button 
+                      className="btn btn-primary"
+                      onClick={() => window.open(selectedProject.tiktokLink, '_blank', 'noopener,noreferrer')}
+                      style={{ marginLeft: '10px' }}
+                    >
+                      <FaTiktok />
+                    </button>
+                  )}
                   <button className="close-btn" onClick={closePreview}>
                     <FaTimes />
                   </button>
@@ -217,7 +222,7 @@ const Portfolio = () => {
               <div className="preview-content">
                 <div className="preview-image-container">
                   <img 
-                    src={selectedProject.previewImage || selectedProject.image} 
+                    src={selectedProject.previewImage} 
                     alt={selectedProject.title}
                     className="preview-image"
                   />

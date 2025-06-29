@@ -1,35 +1,11 @@
-import React, { useState } from 'react';
-import { FaEnvelope, FaPhone, FaLinkedin, FaMapMarkerAlt, FaPaperPlane, FaUser, FaComment } from 'react-icons/fa';
+import React from 'react';
+import { FaEnvelope, FaPhone, FaLinkedin, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      alert('Message sent successfully!');
-    }, 2000);
+  const handleEmailDraft = () => {
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=Mvivier111@gmail.com`;
+    window.open(gmailUrl, '_blank');
   };
 
   return (
@@ -42,43 +18,41 @@ const Contact = () => {
           <p><strong>I'm open to full-time, internship, or contract opportunities — let's connect and explore how I can add value to your team.</strong></p>
         </div>
         
-        <div className="contact-content grid grid-2">
+        <div className="contact-content">
           <div className="contact-info fade-in">
             <h3 className="contact-heading">Let's Start a Conversation</h3>
             <p className="contact-description">
               Captured your interest? I'm just a message away — get in touch and I'll get back to you as soon as possible.
             </p>
             
-            <div className="contact-details">
-              <div className="contact-item">
+            <div className="contact-details horizontal">
+              <div className="contact-item" onClick={() => window.location.href = 'mailto:Mvivier111@gmail.com'}>
                 <div className="contact-icon">
                   <FaEnvelope />
                 </div>
                 <div className="contact-text">
                   <h4>Email</h4>
-                  <a href="mailto:Mvivier111@gmail.com">Mvivier111@gmail.com</a>
+                  <p>Mvivier111@gmail.com</p>
                 </div>
               </div>
               
-              <div className="contact-item">
+              <div className="contact-item" onClick={() => window.location.href = 'tel:647-535-2589'}>
                 <div className="contact-icon">
                   <FaPhone />
                 </div>
                 <div className="contact-text">
                   <h4>Phone</h4>
-                  <a href="tel:647-535-2589">647-535-2589</a>
+                  <p>647-535-2589</p>
                 </div>
               </div>
               
-              <div className="contact-item">
+              <div className="contact-item" onClick={() => window.open('https://www.linkedin.com/in/michel-vivier-92b963251/', '_blank')}>
                 <div className="contact-icon">
                   <FaLinkedin />
                 </div>
                 <div className="contact-text">
                   <h4>LinkedIn</h4>
-                  <a href="https://www.linkedin.com/in/michel-vivier-92b963251/" target="_blank" rel="noopener noreferrer">
-                    Michel Vivier
-                  </a>
+                  <p>Michel Vivier</p>
                 </div>
               </div>
               
@@ -92,82 +66,21 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
-            <div className="availability-status">
-              <div className="status-indicator available"></div>
-              <span>Available for new opportunities</span>
-            </div>
           </div>
           
-          <div className="contact-form-container slide-in-right">
-            <form className="contact-form card" onSubmit={handleSubmit}>
+          <div className="contact-form-container">
+            <div className="contact-form card">
               <h3>Send a Message</h3>
               
-              <div className="form-group">
-                <div className="input-with-icon">
-                  <FaUser className="input-icon" />
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div className="form-group">
-                <div className="input-with-icon">
-                  <FaEnvelope className="input-icon" />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div className="form-group">
-                <div className="input-with-icon">
-                  <FaPaperPlane className="input-icon" />
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div className="form-group">
-                <div className="input-with-icon">
-                  <FaComment className="input-icon textarea-icon" />
-                  <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                  ></textarea>
-                </div>
-              </div>
-              
               <button 
-                type="submit" 
+                type="button" 
                 className="btn btn-primary submit-btn"
-                disabled={isSubmitting}
+                onClick={handleEmailDraft}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                Send Message
                 <FaPaperPlane />
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
