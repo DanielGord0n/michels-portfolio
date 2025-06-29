@@ -1,0 +1,191 @@
+.experience {
+  background: white;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: var(--gradient-primary);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--gradient-primary);
+  border: 4px solid white;
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--background-light);
+}
+
+.timeline-item.left {
+  left: 0;
+  padding-right: 3rem;
+}
+
+.timeline-item.left::after {
+  right: -10px;
+}
+
+.timeline-item.right {
+  left: 50%;
+  padding-left: 3rem;
+}
+
+.timeline-item.right::after {
+  left: -10px;
+}
+
+.timeline-content {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.timeline-item.left .timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-left-color: white;
+}
+
+.timeline-item.right .timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -15px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-right-color: white;
+}
+
+.experience-header {
+  margin-bottom: 1.5rem;
+}
+
+.job-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.job-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.job-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.achievements h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.achievements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.achievements li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.achievements li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.skill-tag {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 0;
+    left: 0 !important;
+  }
+
+  .timeline-item::after {
+    left: 10px !important;
+    right: auto !important;
+  }
+
+  .timeline-content::before {
+    display: none;
+  }
+
+  .job-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
