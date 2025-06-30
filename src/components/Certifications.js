@@ -1,9 +1,35 @@
-import React from 'react';
-import { FaAward, FaMedal, FaCertificate, FaTrophy } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaAward, FaMedal, FaCertificate, FaTrophy, FaEye } from 'react-icons/fa';
 import './Certifications.css';
 
 const Certifications = () => {
-  const certifications = [
+  const [selectedCert, setSelectedCert] = useState(null);
+
+  const professionalCertifications = [
+    {
+      title: "Content Marketing Certified",
+      issuer: "HubSpot Academy",
+      year: "2024",
+      image: "/images/ContentMarketingCertified.png",
+      description: "Comprehensive certification in content marketing strategies and implementation"
+    },
+    {
+      title: "Digital Marketing Certified",
+      issuer: "HubSpot Academy", 
+      year: "2024",
+      image: "/images/DigitalMarketingCertified.png",
+      description: "Advanced digital marketing certification covering modern marketing techniques"
+    },
+    {
+      title: "Social Media Certified",
+      issuer: "HubSpot Academy",
+      year: "2024", 
+      image: "/images/SocialMediaCertified.png",
+      description: "Social media marketing certification focusing on platform strategies and engagement"
+    }
+  ];
+
+  const academicAchievements = [
     {
       title: "PepsiCo 7 Case Semi-Finalist",
       issuer: "Canadian Marketing League",
@@ -11,15 +37,6 @@ const Certifications = () => {
       type: "Competition",
       icon: <FaTrophy />,
       description: "Advanced to semi-finals in prestigious marketing case competition"
-    },
-    {
-      title: "HubSpot Academy Certified",
-      issuer: "HubSpot Academy",
-      year: "2024",
-      type: "Professional Certification",
-      icon: <FaCertificate />,
-      areas: ["Content Marketing", "Digital Marketing", "Social Media Marketing"],
-      description: "Comprehensive digital marketing certification covering modern marketing strategies"
     },
     {
       title: "Academic Honour Roll",
@@ -86,23 +103,42 @@ const Certifications = () => {
           <div className="certifications-section">
             <h3 className="subsection-title">Professional Certifications</h3>
             <div className="certifications-grid grid grid-3">
-              {certifications.map((cert, index) => (
+              {professionalCertifications.map((cert, index) => (
                 <div key={index} className="certification-card card">
                   <div className="cert-icon">
-                    {cert.icon}
+                    <FaCertificate />
                   </div>
                   <h4 className="cert-title">{cert.title}</h4>
                   <p className="cert-issuer">{cert.issuer}</p>
                   <span className="cert-year">{cert.year}</span>
-                  {cert.duration && <span className="cert-duration">({cert.duration})</span>}
                   <p className="cert-description">{cert.description}</p>
-                  {cert.areas && (
-                    <div className="cert-areas">
-                      {cert.areas.map((area, idx) => (
-                        <span key={idx} className="area-tag">{area}</span>
-                      ))}
-                    </div>
-                  )}
+                  <button 
+                    className="cert-preview-btn btn btn-secondary"
+                    onClick={() => setSelectedCert(cert)}
+                  >
+                    <FaEye /> View Certificate
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Academic Achievements */}
+          <div className="achievements-section">
+            <h3 className="subsection-title">Academic Achievements</h3>
+            <div className="achievements-grid grid grid-2">
+              {academicAchievements.map((achievement, index) => (
+                <div key={index} className="achievement-card card">
+                  <div className="achievement-icon">
+                    {achievement.icon}
+                  </div>
+                  <div className="achievement-content">
+                    <h4 className="achievement-title">{achievement.title}</h4>
+                    <p className="achievement-issuer">{achievement.issuer}</p>
+                    <span className="achievement-year">{achievement.year}</span>
+                    {achievement.duration && <span className="achievement-duration">({achievement.duration})</span>}
+                    <p className="achievement-description">{achievement.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -169,6 +205,21 @@ const Certifications = () => {
             </div>
           </div>
         </div>
+
+        {/* Certificate Preview Modal */}
+        {selectedCert && (
+          <div className="cert-modal-overlay" onClick={() => setSelectedCert(null)}>
+            <div className="cert-modal" onClick={(e) => e.stopPropagation()}>
+              <div className="cert-modal-header">
+                <h3>{selectedCert.title}</h3>
+                <button className="cert-modal-close" onClick={() => setSelectedCert(null)}>×</button>
+              </div>
+              <div className="cert-modal-content">
+                <img src={selectedCert.image} alt={selectedCert.title} />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
