@@ -109,9 +109,10 @@
 
 .achievement-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.5rem;
   padding: 2rem;
+  text-align: left;
 }
 
 .achievement-icon {
@@ -125,39 +126,51 @@
   font-size: 1.5rem;
   color: white;
   flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 
 .achievement-content {
   flex: 1;
+  min-width: 0;
 }
 
 .achievement-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-dark);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 .achievement-period {
   color: var(--secondary-color);
   font-size: 0.9rem;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   display: block;
 }
 
 .achievement-description {
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.6;
+  margin-bottom: 0;
 }
 
 .skills-section {
   margin-top: 2rem;
 }
 
+.achievements-grid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .skills-categories {
   gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .skills-category {
@@ -298,7 +311,8 @@
   font-size: 1rem;
   color: var(--secondary-color);
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  display: block;
 }
 
 .achievement-year {
@@ -310,7 +324,6 @@
   font-weight: 600;
   display: inline-block;
   margin-bottom: 1rem;
-  width: auto;
 }
 
 .achievement-duration {
@@ -327,6 +340,7 @@
 
   .achievements-grid {
     grid-template-columns: 1fr;
+    max-width: 400px;
   }
 
   .achievement-card {
@@ -337,6 +351,7 @@
 
   .skills-categories {
     grid-template-columns: 1fr;
+    max-width: 400px;
   }
 
   .cert-title {

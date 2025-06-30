@@ -59,7 +59,7 @@ const Hero = () => {
           <div className="hero-image slide-in-right">
             <div className="image-placeholder">
               <div className="profile-circle">
-                <span>MV</span>
+                <img src="/images/MichelPFP.png" alt="Michel Vivier" className="profile-image" />
               </div>
             </div>
           </div>

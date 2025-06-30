@@ -169,87 +169,8 @@ const Resume = () => {
               </div>
               
               <div className="modal-content">
-                <div className="resume-document">
-                  {/* Resume Header */}
-                  <div className="doc-header">
-                    <h1>{resumeData.personalInfo.name}</h1>
-                    <div className="contact-info">
-                      <span>{resumeData.personalInfo.email}</span>
-                      <span>{resumeData.personalInfo.phone}</span>
-                      <span>{resumeData.personalInfo.linkedin}</span>
-                    </div>
-                  </div>
-
-                  {/* Education */}
-                  <div className="doc-section">
-                    <h2>Education</h2>
-                    <div className="education-item">
-                      <strong>{resumeData.education.school}</strong>
-                      <span className="graduation">{resumeData.education.graduation}</span>
-                    </div>
-                  </div>
-
-                  {/* Experience */}
-                  <div className="doc-section">
-                    <h2>Experience</h2>
-                    {resumeData.experience.map((exp, index) => (
-                      <div key={index} className="experience-item">
-                        <div className="exp-header">
-                          <strong>{exp.title}</strong>
-                          <span className="period">{exp.period}</span>
-                        </div>
-                        <div className="company">{exp.company}</div>
-                        <ul>
-                          {exp.highlights.map((highlight, idx) => (
-                            <li key={idx}>{highlight}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Achievements */}
-                  <div className="doc-section">
-                    <h2>Achievements & Certifications</h2>
-                    <ul>
-                      {resumeData.achievements.map((achievement, index) => (
-                        <li key={index}>{achievement}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Gymnastics Achievements */}
-                  <div className="doc-section">
-                    <h2>Gymnastics Achievements</h2>
-                    <ul>
-                      {resumeData.gymnasticsAchievements.map((achievement, index) => (
-                        <li key={index}>{achievement}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Skills */}
-                  <div className="doc-section">
-                    <h2>Skills & Languages</h2>
-                    <div className="skills-section">
-                      <div>
-                        <strong>Technical Skills:</strong> {resumeData.skills.technical.join(', ')}
-                      </div>
-                      <div>
-                        <strong>Core Competencies:</strong> {resumeData.skills.core.join(', ')}
-                      </div>
-                      <div>
-                        <strong>Marketing & Social Media:</strong> {resumeData.skills.marketing.join(', ')}
-                      </div>
-                      <div>
-                        <strong>Public Speaking & Communication:</strong> {resumeData.skills.communication.join(', ')}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="doc-footer">
-                    <p>REFERENCES AVAILABLE UPON REQUEST</p>
-                  </div>
+                <div className="resume-image-container">
+                  <img src="/images/MichelsResume.png" alt="Michel Vivier Resume" className="resume-image" />
                 </div>
               </div>
             </div>
