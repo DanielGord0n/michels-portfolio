@@ -152,6 +152,9 @@
 
 .project-results {
   margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .results-badge {
@@ -161,6 +164,8 @@
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .project-skills {
@@ -339,6 +344,15 @@
   font-size: 1rem;
   font-weight: 600;
   display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.results-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .skills-list {

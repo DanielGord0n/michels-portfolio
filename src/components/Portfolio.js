@@ -73,6 +73,19 @@ const Portfolio = () => {
     },
     {
       id: 6,
+      title: "Data Analytics & Operations – Lone Star Texas Grill",
+      category: "analytics",
+      description: "Developing a BigQuery-powered labour forecasting solution that combines data visualization, analysis, and advanced modelling to drive operational efficiency and cost management.",
+      fullDescription: "As a Data Analytics & Operations Specialist, I leveraged BigQuery to join, cleanse, and profile large datasets (RawSales and RawLab tables), ensuring data integrity and uncovering patterns to inform an ARIMA-based labour forecasting model. I developed an interactive Looker Studio dashboard visualizing staffing forecasts, enabling managers to make data-driven scheduling decisions that improved labour efficiency. Additionally, I authored a comprehensive analysis report detailing data preparation methodology, analytical findings, compliance considerations, and actionable recommendations for operational improvements.",
+      skills: ["BigQuery", "Data Analysis", "ARIMA Modeling", "Looker Studio", "SQL", "Forecasting"],
+      icon: "/images/lone-star-texas-grill.png",
+      previewImage: "/images/lone-star-texas-grill.png",
+      link: "https://lonestargrillgroup.com/",
+      hasLink: true,
+      results: ["Labour forecasting model", "Interactive dashboard"]
+    },
+    {
+      id: 7,
       title: "Market Research Analysis – The Kind Pet",
       category: "analytics",
       description: "I conducted in-depth market research to identify over 40 independent U.S. pet boutiques that aligned with The Kind Pet's sustainable brand values.",
@@ -166,7 +179,13 @@ const Portfolio = () => {
                 
                 {project.results && (
                   <div className="project-results">
-                    <span className="results-badge">{project.results}</span>
+                    {Array.isArray(project.results) ? (
+                      project.results.map((result, index) => (
+                        <span key={index} className="results-badge">{result}</span>
+                      ))
+                    ) : (
+                      <span className="results-badge">{project.results}</span>
+                    )}
                   </div>
                 )}
                 
@@ -237,7 +256,15 @@ const Portfolio = () => {
                   {selectedProject.results && (
                     <div className="preview-results">
                       <h4>Results</h4>
-                      <span className="results-badge-large">{selectedProject.results}</span>
+                      {Array.isArray(selectedProject.results) ? (
+                        <div className="results-badges-container">
+                          {selectedProject.results.map((result, index) => (
+                            <span key={index} className="results-badge-large">{result}</span>
+                          ))}
+                        </div>
+                      ) : (
+                        <span className="results-badge-large">{selectedProject.results}</span>
+                      )}
                     </div>
                   )}
                   
