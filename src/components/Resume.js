@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaDownload, FaEye, FaExpand, FaFileAlt, FaUser, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import { FaDownload, FaEye, FaExpand, FaFileAlt, FaUser, FaBriefcase, FaGraduationCap, FaExternalLinkAlt } from 'react-icons/fa';
 import './Resume.css';
 
 const Resume = () => {
@@ -95,6 +95,10 @@ const Resume = () => {
     setIsModalOpen(true);
   };
 
+  const handleOpenNewTab = () => {
+    window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="resume" className="section resume">
       <div className="container">
@@ -161,6 +165,9 @@ const Resume = () => {
                 <div className="modal-actions">
                   <button className="btn btn-outline" onClick={handleDownload}>
                     <FaDownload /> Download
+                  </button>
+                  <button className="btn btn-secondary" onClick={handleOpenNewTab}>
+                    <FaExternalLinkAlt /> Open in New Tab
                   </button>
                   <button className="close-btn" onClick={() => setIsModalOpen(false)}>
                     ×

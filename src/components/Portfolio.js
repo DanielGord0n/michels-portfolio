@@ -30,8 +30,10 @@ const Portfolio = () => {
       skills: ["CX Strategy", "Consumer Research", "AI Implementation", "Strategic Writing"],
       icon: "/images/skincare-icon.png",
       previewImage: "/images/skincare-strategy-preview.jpg",
+      pdfDocument: "/Skincare-blog.pdf",
       link: "#",
-      hasLink: false
+      hasLink: false,
+      hasPdf: true
     },
     {
       id: 3,
@@ -240,11 +242,31 @@ const Portfolio = () => {
               
               <div className="preview-content">
                 <div className="preview-image-container">
-                  <img 
-                    src={selectedProject.previewImage} 
-                    alt={selectedProject.title}
-                    className="preview-image"
-                  />
+                  {selectedProject.hasPdf ? (
+                    <div className="pdf-container">
+                      <iframe 
+                        src={selectedProject.pdfDocument} 
+                        title={`${selectedProject.title} PDF`}
+                        className="pdf-iframe"
+                      />
+                      <div className="pdf-controls">
+                        <a 
+                          href={selectedProject.pdfDocument} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="btn btn-secondary"
+                        >
+                          Open in New Tab
+                        </a>
+                      </div>
+                    </div>
+                  ) : (
+                    <img 
+                      src={selectedProject.previewImage} 
+                      alt={selectedProject.title}
+                      className="preview-image"
+                    />
+                  )}
                 </div>
                 
                 <div className="preview-details">
