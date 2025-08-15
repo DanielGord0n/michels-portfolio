@@ -169,8 +169,12 @@ const Resume = () => {
               </div>
               
               <div className="modal-content">
-                <div className="resume-image-container">
-                  <img src="/images/MichelsResume.png" alt="Michel Vivier Resume" className="resume-image" />
+                <div className="resume-pdf-container">
+                  <iframe 
+                    src="/resume.pdf" 
+                    title="Michel Vivier Resume"
+                    className="resume-pdf"
+                  />
                 </div>
               </div>
             </div>
