@@ -81,7 +81,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p>
-              © {currentYear} Michel Vivier. Thank you to my amazing boyfriend for making this website! He's the best!
+              © {currentYear} Michel Vivier
             </p>
             <div className="footer-social">
               <a href="https://www.linkedin.com/in/michel-vivier-92b963251/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
