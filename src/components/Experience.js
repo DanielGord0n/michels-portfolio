@@ -19,6 +19,20 @@ const Experience = () => {
       skills: ["SQL", "Data Analysis", "TikTok Marketing", "Strategic Planning"]
     },
     {
+      title: "Data Analytics & Operations Specialist",
+      company: "Lone Star Texas Grill",
+      period: "2025",
+      location: "Toronto, ON",
+      type: "Internship",
+      achievements: [
+        "Developed BigQuery-powered labour forecasting solution using ARIMA modeling",
+        "Created interactive Looker Studio dashboard for staffing forecasts and operational insights",
+        "Joined, cleansed, and profiled large datasets (RawSales and RawLab tables)",
+        "Authored comprehensive analysis report with compliance considerations and operational recommendations"
+      ],
+      skills: ["BigQuery", "Data Analysis", "ARIMA Modeling", "Looker Studio", "SQL", "Forecasting"]
+    },
+    {
       title: "Virtual Campus Account Manager Intern",
       company: "Canadian Marketing League",
       period: "2024",
