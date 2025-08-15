@@ -58,8 +58,10 @@ const Portfolio = () => {
       skills: ["Social Media Strategy", "Market Research", "Influencer Marketing", "Brand Positioning"],
       icon: "/images/grays-icon.png",
       previewImage: "/images/grays-strategy-preview.jpg",
+      pdfDocument: "/grays-strategy.pdf",
       link: "https://graystoronto.com",
-      hasLink: true
+      hasLink: true,
+      hasPdf: true
     },
     {
       id: 5,
