@@ -72,8 +72,10 @@ const Portfolio = () => {
       skills: ["VR Design", "Experiential Marketing", "Innovation", "Brand Storytelling"],
       icon: "/images/vr-icon.png",
       previewImage: "/images/vr-concept-preview.jpg",
+      videoFile: "/VRad.mov",
       link: "#",
-      hasLink: false
+      hasLink: false,
+      hasVideo: true
     },
     {
       id: 6,
@@ -84,7 +86,7 @@ const Portfolio = () => {
       skills: ["BigQuery", "Data Analysis", "ARIMA Modeling", "Looker Studio", "SQL", "Forecasting"],
       icon: "/images/lone-star-texas-grill.png",
       previewImage: "/images/lone-star-texas-grill.png",
-      link: "https://lonestargrillgroup.com/",
+      link: "https://lonestartexasgrill.com/",
       hasLink: true,
       results: ["Labour forecasting model", "Interactive dashboard"]
     },
@@ -96,7 +98,7 @@ const Portfolio = () => {
       fullDescription: "I compiled detailed store profiles including contact information, social insights, and product compatibility. My final business development report included strategic outreach recommendations to support retail partnerships and expansion. This role strengthened my skills in market analysis, B2B outreach, brand alignment, and strategic reporting.",
       skills: ["Market Research", "Data Analysis", "B2B Strategy", "Strategic Reporting"],
       icon: "/images/kindpet-icon.png",
-      previewImage: "/images/kindpet-research-preview.jpg",
+      previewImage: "/images/kindpet-icon.png",
       link: "https://thekindpet.com",
       hasLink: true,
       results: "40+ boutiques identified"
@@ -261,6 +263,15 @@ const Portfolio = () => {
                           Open in New Tab
                         </a>
                       </div>
+                    </div>
+                  ) : selectedProject.hasVideo ? (
+                    <div className="video-container">
+                      <video 
+                        src={selectedProject.videoFile} 
+                        controls
+                        className="video-player"
+                        preload="metadata"
+                      />
                     </div>
                   ) : (
                     <img 

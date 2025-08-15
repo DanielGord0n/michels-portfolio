@@ -420,6 +420,20 @@
   gap: 1rem;
 }
 
+/* Video Player Styles */
+.video-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.video-player {
+  width: 100%;
+  max-height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .btn-secondary {
   background: var(--background-light);
   color: var(--primary-color);
