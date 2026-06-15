@@ -1,383 +1,212 @@
-.certifications {
-  background: white;
+.certs {
+  background: var(--white);
 }
 
-.certifications-content {
+.certs__eyebrow {
+  margin-bottom: 14px;
+}
+
+.certs__h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 36px;
+}
+
+.certs__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.certs__row-head {
   display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
 
-.subsection-title {
-  font-size: 1.8rem;
+.certs__subhead {
+  font-family: var(--font-display);
   font-weight: 600;
-  color: var(--text-dark);
+  font-size: 16px;
+  color: var(--ink);
+}
+.certs__subhead--gap {
+  margin: 32px 0 16px;
+}
+
+.certs__note {
+  font-size: 12.5px;
+  color: var(--muted-3);
+  font-weight: 600;
+}
+
+.certs__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.certs__card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
   text-align: center;
-  margin-bottom: 2rem;
+  box-shadow: var(--shadow-card-soft);
+  position: relative;
+  cursor: pointer;
+}
+
+.certs__thumb {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eef0f4;
+  margin-bottom: 11px;
+  aspect-ratio: 4 / 3;
+  background: var(--surface-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
-
-.subsection-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-}
-
-.certification-card {
-  text-align: center;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 400px;
-}
-
-.cert-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  font-size: 2rem;
-  color: white;
-}
-
-.cert-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.cert-issuer {
-  font-size: 1rem;
-  color: var(--secondary-color);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.cert-year {
-  background: var(--gradient-secondary);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-.cert-duration {
-  display: block;
-  color: var(--text-light);
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
-}
-
-.cert-description {
-  color: var(--text-light);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.cert-areas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.area-tag {
-  background: var(--background-light);
-  color: var(--text-dark);
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.achievement-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 2rem;
-  text-align: left;
-}
-
-.achievement-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: white;
-  flex-shrink: 0;
-  margin-top: 0.2rem;
-}
-
-.achievement-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.achievement-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.achievement-period {
-  color: var(--secondary-color);
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 0.8rem;
-  display: block;
-}
-
-.achievement-description {
-  color: var(--text-light);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 0;
-}
-
-.skills-section {
-  margin-top: 2rem;
-}
-
-.achievements-grid {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.skills-categories {
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.skills-category {
-  padding: 2rem;
-}
-
-.skills-category h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.skills-list .skill-tag {
-  background: var(--gradient-primary);
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-/* Certificate Preview Button and Modal */
-.cert-preview-btn {
-  margin-top: auto;
-  padding: 0.8rem 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: var(--gradient-secondary);
-  color: white;
-  align-self: center;
-  width: fit-content;
-}
-
-.cert-preview-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-}
-
-.cert-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.certs__thumb img {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  object-fit: cover;
+}
+
+.certs__view {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 62, 80, 0.55);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
+  gap: 7px;
+  opacity: 0;
+  transition: opacity 0.25s;
 }
 
-.cert-modal {
-  background: white;
-  border-radius: 12px;
-  width: 90vw;
-  height: 85vh;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+.certs__card-title {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.certs__card-sub {
+  font-size: 11.5px;
+  color: var(--muted-3);
+  margin-top: 2px;
+}
+
+.certs__list {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
-.cert-modal-header {
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--background-light);
+.certs__item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-card-soft);
 }
 
-.cert-modal-header h3 {
-  margin: 0;
-  font-size: 1.3rem;
-  color: var(--text-dark);
-}
-
-.cert-modal-close {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-light);
-  padding: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+.certs__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.cert-modal-close:hover {
-  background: var(--background-light);
-  color: var(--text-dark);
+.certs__item-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
 }
 
-.cert-modal-content {
-  padding: 1rem;
-  text-align: center;
-  flex: 1;
-  overflow: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.certs__item-sub {
+  font-size: 13px;
+  color: var(--muted-2);
+  margin-top: 2px;
 }
 
-.cert-modal-content img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* ---------- Athletic card ---------- */
+.certs__athletic {
+  background: var(--grad-primary);
+  border-radius: 18px;
+  padding: 26px;
+  color: #fff;
+  box-shadow: 0 24px 48px -28px rgba(118, 75, 162, 0.6);
 }
 
-/* Update achievement styles for consistency */
-.achievement-issuer {
-  font-size: 1rem;
-  color: var(--secondary-color);
-  font-weight: 500;
-  margin-bottom: 0.8rem;
-  display: block;
-}
-
-.achievement-year {
-  background: var(--gradient-secondary);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
+.certs__athletic-intro {
+  font-size: 13px;
   font-weight: 600;
-  display: inline-block;
-  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
-.achievement-duration {
-  display: block;
-  color: var(--text-light);
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
+.certs__athletic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-@media (max-width: 768px) {
-  .certifications-grid {
+.certs__athletic-item {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.certs__athletic-tag {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 4px 9px;
+  flex-shrink: 0;
+}
+
+.certs__athletic-title {
+  font-weight: 700;
+  font-size: 14.5px;
+}
+
+.certs__athletic-sub {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 860px) {
+  .certs__h2 {
+    font-size: 30px;
+  }
+  .certs__grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .achievements-grid {
+@media (max-width: 460px) {
+  .certs__cards {
     grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-
-  .achievement-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .skills-categories {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-
-  .cert-title {
-    font-size: 1rem;
-  }
-
-  .cert-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-  
-  .cert-modal {
-    width: 95vw;
-    height: 90vh;
-  }
-  
-  .cert-modal-header {
-    padding: 1rem 1.5rem;
-  }
-  
-  .cert-modal-content {
-    padding: 0.5rem;
-  }
-  
-  .cert-modal-overlay {
-    padding: 1rem;
   }
 }

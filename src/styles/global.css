@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(118, 75, 162, 0.18);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes mvFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes mvShimmer {
+  0% {
+    transform: translateX(-140%);
+  }
+  100% {
+    transform: translateX(540%);
+  }
+}
+
+@keyframes mvPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+/* ---------- Shared section primitives ---------- */
+.mv-section {
+  padding: 90px var(--section-pad-x);
+}
+
+.mv-shell {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.mv-eyebrow {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--violet);
+  text-transform: uppercase;
+}
+
+.mv-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ---------- Shared hover behaviours (ported from reference) ---------- */
+.mv-navlink {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14.5px;
+  transition: color 0.2s;
+}
+.mv-navlink:hover {
+  color: var(--violet);
+}
+
+.mv-btn-primary,
+.mv-btn-ghost {
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.mv-btn-primary {
+  text-decoration: none;
+  background: var(--grad-pink);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 15px 30px;
+  border-radius: var(--r-pill);
+  border: none;
+  box-shadow: 0 14px 28px -12px rgba(245, 87, 108, 0.6);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.mv-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px -12px rgba(245, 87, 108, 0.65);
+}
+
+.mv-btn-ghost {
+  text-decoration: none;
+  border: 1.5px solid #d4cae8;
+  color: #5a4b78;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 15px 30px;
+  border-radius: var(--r-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+}
+.mv-btn-ghost:hover {
+  background: rgba(118, 75, 162, 0.06);
+}
+
+.mv-card {
+  transition: all 0.3s;
+}
+.mv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 56px -28px rgba(44, 62, 80, 0.45) !important;
+}
+
+.mv-proj {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.mv-proj:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 56px -28px rgba(44, 62, 80, 0.4) !important;
+  border-color: #d6c8ec !important;
+}
+
+.mv-cert {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.mv-cert:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 26px 50px -28px rgba(44, 62, 80, 0.5) !important;
+}
+.mv-cert:hover .mv-cert-view {
+  opacity: 1 !important;
+}
+
+/* ---------- Chips ---------- */
+.mv-chip {
+  background: var(--tag-neutral-bg);
+  border: 1px solid var(--border-3);
+  color: var(--tag-ink);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 9px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ---------- Section heading responsive ---------- */
+@media (max-width: 640px) {
+  .mv-section {
+    padding: 64px var(--section-pad-x);
+  }
+  .mv-h2 {
+    font-size: 30px;
+  }
+}

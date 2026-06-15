@@ -1,0 +1,67 @@
+:root {
+  /* ---------- Text / ink ---------- */
+  --ink: #2c3e50;
+  --muted: #5a6b7b;
+  --muted-2: #7a8997;
+  --muted-3: #9aa7b5;
+  --muted-4: #a3aebb;
+  --tag-ink: #3f5161;
+
+  /* ---------- Accents ---------- */
+  --purple: #667eea;
+  --violet: #764ba2;
+  --blue: #3498db;
+  --pink: #f093fb;
+  --pink-2: #f5576c;
+  --success: #1c9c5a;
+
+  /* ---------- Gradients ---------- */
+  --grad-primary: linear-gradient(135deg, #667eea, #764ba2);
+  --grad-primary-120: linear-gradient(120deg, #667eea, #764ba2);
+  --grad-pink: linear-gradient(135deg, #f093fb, #f5576c);
+  --grad-mars: linear-gradient(135deg, #3b1b52 0%, #2c3e50 100%);
+  --grad-lonestar: linear-gradient(135deg, #0e1c2b 0%, #2c3e50 100%);
+
+  /* ---------- Surfaces ---------- */
+  --bg-page: #eef1f5;
+  --white: #ffffff;
+  --surface-soft: #f7f8fb;
+  --border: #e8ecf2;
+  --border-2: #e1e6ed;
+  --border-3: #e4e8ee;
+  --dark: #0e1c2b;
+  --footer: #0a141f;
+
+  /* ---------- Tag palettes ---------- */
+  --tag-neutral-bg: #f1f3f7;
+  --tag-purple-bg: #f3effa;
+  --tag-purple-text: #6b4e98;
+  --tag-pink-bg: #fdeef0;
+  --tag-pink-text: #b23a4d;
+
+  /* ---------- Radii ---------- */
+  --r-card: 16px;
+  --r-card-lg: 22px;
+  --r-pill: 30px;
+  --r-chip: 8px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-card: 0 14px 34px -28px rgba(44, 62, 80, 0.4);
+  --shadow-elevated: 0 30px 60px -34px rgba(44, 62, 80, 0.4);
+  --shadow-card-soft: 0 12px 30px -24px rgba(44, 62, 80, 0.4);
+
+  /* ---------- Type ---------- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+
+  /* ---------- Layout ---------- */
+  --maxw: 1200px;
+  --maxw-narrow: 1040px;
+  --section-pad-x: 40px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-pad-x: 20px;
+  }
+}

@@ -8,6 +8,8 @@ node_modules
 
 # Production build
 /build
+/dist
+*.tsbuildinfo
 
 # Environment variables
 .env

@@ -1,0 +1,342 @@
+.report {
+  background: var(--bg-page);
+  padding: 84px var(--section-pad-x);
+}
+
+.report__eyebrow {
+  margin-bottom: 12px;
+}
+
+.report__h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.report__lede {
+  font-size: 16.5px;
+  color: var(--muted-2);
+  margin: 0 0 30px;
+  max-width: 640px;
+}
+
+.report__card {
+  background: var(--white);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-card-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+}
+
+/* ---------- Header ---------- */
+.report__header {
+  background: var(--grad-primary);
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.report__shimmer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  animation: mvShimmer 4.5s ease-in-out infinite;
+}
+
+.report__header-left {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  position: relative;
+}
+
+.report__badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.report__title {
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.report__subtitle {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.report__pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5dffb0;
+  animation: mvPulse 1.8s ease-in-out infinite;
+}
+
+.report__header-right {
+  display: flex;
+  gap: 8px;
+  position: relative;
+  align-items: center;
+}
+
+.report__replay {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: background 0.2s;
+}
+.report__replay:hover {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.report__tag {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 13px;
+  border-radius: 8px;
+}
+
+/* ---------- Body ---------- */
+.report__body {
+  padding: 26px 30px 30px;
+  background: var(--surface-soft);
+}
+
+.report__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.report__kpi {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.report__kpi-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.report__kpi-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 34px;
+  color: var(--ink);
+  margin-top: 8px;
+}
+
+.report__kpi-source {
+  color: var(--success);
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* ---------- Charts row ---------- */
+.report__charts {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 14px;
+}
+
+.report__chart-card,
+.report__donut-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.report__donut-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.report__chart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.report__chart-title {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.report__chart-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--violet);
+  background: var(--tag-purple-bg);
+  padding: 4px 10px;
+  border-radius: 7px;
+}
+
+.report__barchart {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  height: 140px;
+}
+
+.report__bargroup {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 100%;
+}
+
+.report__bar {
+  flex: 1;
+  border-radius: 5px 5px 0 0;
+  transform-origin: bottom;
+}
+
+.report__legend {
+  display: flex;
+  gap: 18px;
+  margin-top: 14px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted-2);
+}
+.report__legend > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.report__legend-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+}
+
+/* ---------- Donut ---------- */
+.report__donut-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.report__donut {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background: conic-gradient(#764ba2 0 46%, #667eea 0 74%, #3498db 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.report__donut-hole {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.report__donut-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.report__donut-cap {
+  font-size: 9.5px;
+  color: var(--muted-3);
+  font-weight: 600;
+}
+
+.report__donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.report__donut-legend > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.report__donut-legend .report__legend-dot {
+  width: 10px;
+  height: 10px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .report__charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .report__kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .report__header {
+    flex-wrap: wrap;
+  }
+  .report__body {
+    padding: 20px;
+  }
+}
