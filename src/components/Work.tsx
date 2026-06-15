@@ -44,7 +44,7 @@ export default function Work() {
                       openLightbox(p.icon, `${p.title} logo`);
                     }}
                   >
-                    <img src={p.icon} alt={p.title} />
+                    <img src={p.icon} alt={p.title} loading="lazy" decoding="async" />
                   </button>
                   <span
                     className="work__cat"

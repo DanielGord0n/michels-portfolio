@@ -26,7 +26,7 @@ export default function Certifications() {
                   onClick={() => openCertModal(i)}
                 >
                   <div className="certs__thumb">
-                    <img src={c.img} alt={`${c.title} certificate`} />
+                    <img src={c.img} alt={`${c.title} certificate`} loading="lazy" decoding="async" />
                     <span className="mv-cert-view certs__view">🔍 View</span>
                   </div>
                   <div className="certs__card-title">{c.title}</div>

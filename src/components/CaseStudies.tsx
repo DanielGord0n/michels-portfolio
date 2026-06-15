@@ -98,7 +98,7 @@ function LoneStarPanel() {
         <div>
           <div className="case__id">
             <div className="case__logo case__logo--lonestar">
-              <img src="/assets/lone-star-texas-grill.png" alt="Lone Star" />
+              <img src="/assets/lone-star-texas-grill.png" alt="Lone Star" loading="lazy" decoding="async" />
             </div>
             <div>
               <div className="case__title">Labour forecasting with ARIMA</div>
