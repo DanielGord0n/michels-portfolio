@@ -1,15 +1,47 @@
-import { certs } from '../data/certs';
+import { certs, msCerts } from '../data/certs';
 import { useUI } from '../context/UIContext';
 import './Certifications.css';
 
 export default function Certifications() {
-  const { openCertModal } = useUI();
+  const { openCertModal, openLightbox } = useUI();
 
   return (
     <section id="certifications" className="mv-section certs">
       <div className="mv-shell">
         <div className="mv-eyebrow certs__eyebrow">Credentials</div>
         <h2 className="certs__h2">Certifications &amp; achievements</h2>
+
+        <div className="certs__row-head">
+          <div className="certs__subhead">Microsoft · Data &amp; Analytics</div>
+          <span className="certs__note">Authorized by Microsoft · via Coursera</span>
+        </div>
+        <div className="certs__ms-grid">
+          {msCerts.map((c) => (
+            <div key={c.credentialId} className="mv-card certs__ms-card">
+              <button
+                type="button"
+                className="certs__ms-thumb"
+                onClick={() => openLightbox(c.img, `${c.title} certificate`)}
+                aria-label={`Enlarge ${c.title} certificate`}
+              >
+                <img src={c.img} alt={`${c.title} certificate`} loading="lazy" decoding="async" />
+              </button>
+              <div className="certs__ms-body">
+                <div className="certs__ms-title">{c.title}</div>
+                <div className="certs__ms-issuer">Microsoft · Coursera</div>
+                <div className="certs__ms-meta">Issued {c.date}</div>
+                <a
+                  className="certs__ms-verify"
+                  href={c.verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Show credential <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <div className="certs__grid">
           <div>

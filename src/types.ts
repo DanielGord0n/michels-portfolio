@@ -40,6 +40,14 @@ export interface Cert {
   img: string;
 }
 
+export interface MsCert {
+  title: string;
+  img: string;
+  date: string;
+  credentialId: string;
+  verifyUrl: string;
+}
+
 export const CAT_COLOR: Record<ProjectCategory, string> = {
   Analytics: '#764ba2',
   Strategy: '#3498db',

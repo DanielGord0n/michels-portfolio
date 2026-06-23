@@ -16,6 +16,89 @@
   margin: 0 0 36px;
 }
 
+/* ---------- Microsoft data & analytics certificates ---------- */
+.certs__ms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 44px;
+}
+
+.certs__ms-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.certs__ms-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1772 / 928;
+  overflow: hidden;
+  cursor: zoom-in;
+  border: none;
+  padding: 0;
+  background: #f4f6fa;
+  border-bottom: 1px solid var(--border);
+}
+.certs__ms-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+.certs__ms-card:hover .certs__ms-thumb img {
+  transform: scale(1.04);
+}
+
+.certs__ms-body {
+  padding: 15px 17px 17px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.certs__ms-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14.5px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 7px;
+}
+
+.certs__ms-issuer {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.certs__ms-meta {
+  font-size: 12px;
+  color: var(--muted-3);
+  margin-top: 2px;
+  margin-bottom: 13px;
+}
+
+.certs__ms-verify {
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--violet);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.certs__ms-verify:hover {
+  text-decoration: underline;
+}
+
 .certs__grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -196,11 +279,23 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+@media (max-width: 880px) {
+  .certs__ms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 860px) {
   .certs__h2 {
     font-size: 30px;
   }
   .certs__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .certs__ms-grid {
     grid-template-columns: 1fr;
   }
 }
