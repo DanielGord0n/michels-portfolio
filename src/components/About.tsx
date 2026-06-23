@@ -123,6 +123,18 @@ export default function About() {
         <div className="about__roadmap">
           <div className="about__stage">
             <div className="about__stage-tag">Next move</div>
+            <div className="about__stage-role about__stage-role--sm">
+              Sales Operations &amp; Business Intelligence Lead
+            </div>
+            <div className="about__stage-note">
+              Owning the data and reporting behind commercial decisions.
+            </div>
+          </div>
+          <div className="about__arrow" aria-hidden="true">
+            →
+          </div>
+          <div className="about__stage">
+            <div className="about__stage-tag">Building toward</div>
             <div className="about__stage-roles">
               <span>Account Management</span>
               <span>Demand Planning</span>

@@ -1,10 +1,7 @@
 import { experience } from '../data/experience';
-import { useUI } from '../context/UIContext';
 import './ExperienceTimeline.css';
 
 export default function ExperienceTimeline() {
-  const { openLightbox } = useUI();
-
   return (
     <section id="experience" className="mv-section experience">
       <div className="experience__shell">
@@ -55,15 +52,9 @@ export default function ExperienceTimeline() {
                         )}
                         <div className="experience__photos">
                           {e.images.map((img) => (
-                            <button
-                              key={img.src}
-                              type="button"
-                              className="experience__photo"
-                              onClick={() => openLightbox(img.src, img.alt)}
-                              aria-label="Enlarge photo"
-                            >
+                            <figure key={img.src} className="experience__photo">
                               <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
-                            </button>
+                            </figure>
                           ))}
                         </div>
                       </div>
