@@ -3,11 +3,10 @@ import './Nav.css';
 const RESUME = '/assets/Michel_Vivier_Resume.pdf';
 
 const links: [string, string][] = [
-  ['#report', 'Impact'],
-  ['#about', 'About'],
   ['#experience', 'Experience'],
+  ['#report', 'Impact'],
   ['#casestudy', 'Case study'],
-  ['#dashboard', 'Dashboard'],
+  ['#about', 'About'],
   ['#work', 'Work'],
   ['#contact', 'Contact'],
 ];

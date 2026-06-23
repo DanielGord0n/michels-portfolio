@@ -6,6 +6,10 @@ export interface ExperienceEntry {
   accent: string;
   bullets: string[];
   skills: string[];
+  /** Optional photos shown in the timeline card (e.g. gymnastics). */
+  images?: { src: string; alt: string }[];
+  /** Optional caption above the photo gallery. */
+  imagesLabel?: string;
 }
 
 export type ProjectCategory = 'Analytics' | 'Strategy' | 'Design' | 'Creative';
@@ -34,23 +38,6 @@ export interface Project {
 export interface Cert {
   title: string;
   img: string;
-}
-
-export type DashViewKey = 'audience' | 'retention' | 'pipeline' | 'inquiries';
-
-export interface DashBar {
-  l: string;
-  v: number;
-}
-
-export interface DashView {
-  label: string;
-  kpi: string;
-  kpiLabel: string;
-  accent: string;
-  yLabel: string;
-  insight: string;
-  bars: DashBar[];
 }
 
 export const CAT_COLOR: Record<ProjectCategory, string> = {

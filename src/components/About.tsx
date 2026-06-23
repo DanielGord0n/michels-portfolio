@@ -110,6 +110,48 @@ export default function About() {
           ))}
         </div>
       </div>
+
+      <div className="about__future">
+        <div className="about__future-head">
+          <div className="mv-eyebrow">Looking ahead</div>
+          <h3 className="about__future-title">Where I see myself in 5 years</h3>
+          <p className="about__future-lede">
+            My goal is to grow out of pure analytics and into the commercial side of the business —
+            closer to the customer, the planning and the decisions that move it.
+          </p>
+        </div>
+        <div className="about__roadmap">
+          <div className="about__stage">
+            <div className="about__stage-tag">Next move</div>
+            <div className="about__stage-roles">
+              <span>Account Management</span>
+              <span>Demand Planning</span>
+              <span>Category Management</span>
+            </div>
+            <div className="about__stage-note">
+              Owning relationships, forecasts and the category.
+            </div>
+          </div>
+          <div className="about__arrow" aria-hidden="true">
+            →
+          </div>
+          <div className="about__stage">
+            <div className="about__stage-tag">Long term</div>
+            <div className="about__stage-role">Director</div>
+            <div className="about__stage-note">Leading a function and the team behind it.</div>
+          </div>
+          <div className="about__arrow" aria-hidden="true">
+            →
+          </div>
+          <div className="about__stage about__stage--star">
+            <div className="about__stage-tag">Shooting for the stars</div>
+            <div className="about__stage-role">
+              General Manager <span className="about__star">✦</span>
+            </div>
+            <div className="about__stage-note">Running a business end to end.</div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

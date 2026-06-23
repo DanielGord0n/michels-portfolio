@@ -5,7 +5,6 @@ import ImpactReport from './components/ImpactReport';
 import About from './components/About';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import CaseStudies from './components/CaseStudies';
-import Dashboard from './components/Dashboard';
 import Work from './components/Work';
 import Certifications from './components/Certifications';
 import Skills from './components/Skills';
@@ -20,11 +19,10 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <ImpactReport />
-        <About />
         <ExperienceTimeline />
+        <ImpactReport />
         <CaseStudies />
-        <Dashboard />
+        <About />
         <Work />
         <Certifications />
         <Skills />
